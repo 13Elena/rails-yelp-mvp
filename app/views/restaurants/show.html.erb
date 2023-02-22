@@ -1,0 +1,17 @@
+<div #id= "general">
+  <div class= "container">
+    <div class = "card"><p>Name: <%= @restaurant.name %></p></div>
+      <div class = "card"><p>Phone number: <%= @restaurant.phone_number %></p></div>
+      <div class = "card"><p>Address: <%= @restaurant.address %></p></div>
+      <div class = "card"><p>Category: <%= @restaurant.category %></p></div>
+      <div class = "card"><p>Rating: </p>
+        <ul>
+          <% @reviews.each do |review| %>
+          <li> <%= review.content %>  </li>
+          <li> <%= review.rating %>  </li>
+          <% end %>
+        </ul>
+      </div>
+    <div class= "btn btn-warning"><%= link_to "Add a review", new_restaurant_review_path(@restaurant.id) %></div>
+  </div>
+</div>
